@@ -6,15 +6,73 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
-    <button class="trigger">Click me!</button>
+    <button class="trigger btn">It works!</button>
     <div class="modal">
         <div class="modal-content">
             <span class="close-button">×</span>
             <h1>Log in to the Site</h1>
+            <div class="modal-container">
+                <div class="box">
+                        <button type="button" class="btn-facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Log in with Facebook
+                        </button>
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google-plus-g"></i>
+                            Log in with Google+
+                        </button>
+                </div>
+                <div class="box"></div>
+                <div class="box">
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Login</label><br>
+                            <input type="text" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label><br>
+                            <input type="password" required class="form-control">
+                        </div>
+                        <div class="checkbox-main">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                <span></span>
+                            </label>
+                            <label for="test">Remember me</label>
+                        </div>
+                        <div class="log">
+                            <button type="submit" class="btn-log">Log in</button>
+                            <a href="#">Need help logging in?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                Don`t have an account yet? <a href="#">Sign up</a>
+            </div>
         </div>
     </div>
+    <script>
+        var modal = document.querySelector(".modal");
+        var trigger = document.querySelector(".trigger");
+        var closeButton = document.querySelector(".close-button");
+
+        function toggleModal() {
+            modal.classList.toggle("show-modal");
+        }
+
+        function windowOnClick(event) {
+            if (event.target === modal) {
+                toggleModal();
+            }
+        }
+
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick);
+    </script>
 </body>
 </html>
