@@ -60,7 +60,10 @@ html {
             width: 100%;
             background: #f3f3f3;
             display: grid;
-            grid-template-columns: 1fr 1px 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            .box {
+                margin: 40px 0;
+            }
             .box .btn-facebook {
                 position: relative;
                 display: block;
@@ -71,7 +74,7 @@ html {
                 background: #3e5b96;
                 color: white;
                 padding: 10px 50px 10px 80px;
-                margin: 40px auto 20px auto;
+                margin: 0 auto 20px auto;
                 font-size: 14px;
                 cursor: pointer;
                 &:hover {
@@ -124,11 +127,6 @@ html {
                     transform: translate(-50%, -50%);
                 }
             }
-            .box:nth-child(2) {
-                height: 80%;
-                background-color: #cfcfcf;
-                align-self: center;
-            }
         }
     }
 }
@@ -141,7 +139,9 @@ html {
 }
 
 .form {
-    margin: 40px 60px;
+    border-left: 1px solid #ddd;
+    padding: 0 60px;
+    box-sizing: border-box;
     .form-group {
         font-size: 15px;
         font-weight: 550;
@@ -154,7 +154,7 @@ html {
         }
         .form-control {
             border: 1px solid #ddd;
-            padding: 10px 5px;
+            padding: 10px 0px;
             margin: 5px 0 10px 0;
         }
     }
